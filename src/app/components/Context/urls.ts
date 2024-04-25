@@ -31,7 +31,7 @@ export const urls = [
   loading: false,
 }
 ,
- { url: "http://www.scifiscripts.com/scripts/back_to_the_future_original_draft.html",
+ { url: "http://www.scifiscripts.com/scripts/backtothefuture_transcript.txt",
   title: "BACK TO THE FUTURE",
   seeded: false,
   loading: false,
