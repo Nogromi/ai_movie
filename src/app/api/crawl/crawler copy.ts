@@ -30,7 +30,7 @@ class Crawler {
 
       // Fetch the page HTML
       const html = await this.fetchPage(url);
-      console.log(html)
+
       // Parse the HTML and add the page to the list of crawled pages
       this.pages.push({ url, content: this.parseHtml(html) });
 

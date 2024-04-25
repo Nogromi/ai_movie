@@ -58,3 +58,22 @@ export async function clearIndex(
     setCards([]);
   }
 }
+
+export async function loadYoutube(
+){
+  const response = await fetch("/api/loadYoutube", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    setEntries((prevEntries: IUrlEntry[]) =>
+      prevEntries.map((entry: IUrlEntry) => ({
+        ...entry,
+        seeded: false,
+        loading: false,
+      }))
+    );
+    setCards([]);
+  }
+}

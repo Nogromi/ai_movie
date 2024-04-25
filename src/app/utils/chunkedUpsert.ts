@@ -1,4 +1,5 @@
 import type { Index, PineconeRecord } from '@pinecone-database/pinecone';
+import { children } from 'cheerio/lib/api/traversing';
 
 const sliceIntoChunks = <T>(arr: T[], chunkSize: number) => {
   return Array.from({ length: Math.ceil(arr.length / chunkSize) }, (_, i) =>
@@ -20,7 +21,9 @@ export const chunkedUpsert = async (
     await Promise.allSettled(
       chunks.map(async (chunk) => {
         try {
-          await index.namespace(namespace).upsert(vectors);
+          console.log(chunk)
+
+          await index.namespace(namespace).upsert(chunk);
         } catch (e) {
           console.log('Error upserting chunk', e);
         }
